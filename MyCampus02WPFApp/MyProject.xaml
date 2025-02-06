@@ -1,0 +1,84 @@
+﻿<Window x:Class="MyCampus02WPFApp.MyVacationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyCampus02WPFApp"
+        mc:Ignorable="d"
+        Title="MyVacationWindow" Height="678" Width="866">
+    <DockPanel Background="#FFB2DFEE">
+        <Menu DockPanel.Dock="Top" Background="MediumTurquoise">
+            <MenuItem Header="Urlaubsoptionen" />
+        </Menu>
+        <StatusBar DockPanel.Dock="Bottom" Background="#FFD39B">
+            <Label>Heute ist der 23.01.2025</Label>
+        </StatusBar>
+        <ScrollViewer>
+            <StackPanel Margin="10">
+                <Label FontSize="18" FontWeight="Bold">Urlaubsplanung</Label>
+
+                <GroupBox Header="Reisedetails" Margin="0,10,0,0">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0" Grid.Column="0" Content="Reiseziel"/>
+                        <TextBox Grid.Row="0" Grid.Column="1" Text="Maldiven"/>
+                        <Label Grid.Row="1" Grid.Column="0" Content="Reisekosten (€)"/>
+                        <TextBox Grid.Row="1" Grid.Column="1" Text="2500"/>
+                    </Grid>
+                </GroupBox>
+
+                <GroupBox Header="Reiseart" Margin="0,10,0,0" ToolTip="Wählen Sie Ihre bevorzugte Reiseart">
+                    <StackPanel Orientation="Horizontal">
+                        <RadioButton Margin="0,0,10,0">All-Inclusive</RadioButton>
+                        <RadioButton Margin="0,0,10,0">Individuell</RadioButton>
+                        <RadioButton>Gruppenreise</RadioButton>
+                    </StackPanel>
+                </GroupBox>
+
+                <GroupBox Header="Reiseplanung" Margin="0,10,0,0">
+                    <StackPanel>
+                        <CheckBox Margin="0,5,0,0">Flüge gebucht</CheckBox>
+                        <CheckBox Margin="0,5,0,0">Unterkunft reserviert</CheckBox>
+                    </StackPanel>
+                </GroupBox>
+
+                <GroupBox Header="Reisedauer" Margin="0,10,0,0">
+                    <StackPanel>
+                        <Label>Anzahl der Reisetage:</Label>
+                        <StackPanel Orientation="Horizontal">
+                            <Slider x:Name="ReisetageSlider" Minimum="1" Maximum="30" Value="7" Width="200" TickFrequency="1" IsSnapToTickEnabled="True"/>
+                            <Label Content="{Binding ElementName=ReisetageSlider, Path=Value}" Margin="10,0,0,0"/>
+                        </StackPanel>
+                    </StackPanel>
+                </GroupBox>
+
+                <GroupBox Header="Reisezweck" Margin="0,10,0,0">
+                    <ListBox>
+                        <ListBoxItem>Erholung</ListBoxItem>
+                        <ListBoxItem>Abenteuer</ListBoxItem>
+                        <ListBoxItem>Kultur</ListBoxItem>
+                    </ListBox>
+                </GroupBox>
+
+                <Expander Header="Reisebilder" Margin="0,10,0,0" Background="#FF7AC5CD">
+                    <StackPanel Orientation="Horizontal">
+
+                        <Image Source="/bin/Debug/images/beach01.jpg" Height="100"/>
+                        <Image Source="/bin/Debug/images/culture malediven.jpg" Height="100" />
+                        <Image Source="/bin/Debug/images/fish.jpg" Height="100"/>
+                        <Image Source="/bin/Debug/images/malediven01.jpg" Height="100"/>
+                        <Image Source="/bin/Debug/images/scuba-diving.jpg" Height="100"/>
+
+                    </StackPanel>
+                </Expander>
+            </StackPanel>
+        </ScrollViewer>
+    </DockPanel>
+</Window>

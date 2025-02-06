@@ -1,0 +1,64 @@
+﻿<Window x:Class="MyCampus02WPFApp.MyProductWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyCampus02WPFApp"
+        mc:Ignorable="d"
+        Title="MyProductWindow" Height="450" Width="800">
+    <Window.Resources>
+        <SolidColorBrush x:Key="Meine Lieblingsfarbe" Color="AliceBlue"></SolidColorBrush>
+    </Window.Resources>
+    <DockPanel>
+        <Menu DockPanel.Dock="Top" Background="{StaticResource Meine Lieblingsfarbe}">
+            <Menu>Datei</Menu>
+        </Menu>
+        <StatusBar DockPanel.Dock="Bottom">
+            <Label>Heute ist der 23.01.2025</Label>
+        </StatusBar>
+        <StackPanel>
+            <Label>Mein Produkt</Label>
+            <UniformGrid Rows="2" Columns="2">
+                <Label Content="ProduktBezeichnung"></Label>
+                <TextBox>Handy</TextBox>
+                <Label>Preis</Label>
+                <TextBox>12,5</TextBox>
+            </UniformGrid>
+            <StackPanel Orientation="Horizontal">
+                <!--komplexer Tooltip-->
+                <StackPanel.ToolTip>
+                    <WrapPanel>
+                        <Label>A</Label>
+                        <Label>B</Label>
+                        <Image Source="https://winningfour2six.de/wp-content/uploads/2022/09/deapdreamgenerator-deepstyle-ki-bilder-erstellen-test2-1024x524.jpg"  Height="150"></Image>
+                        
+                    </WrapPanel>
+                </StackPanel.ToolTip>
+                <StackPanel>
+                    <CheckBox>Reduziert</CheckBox>
+                    <CheckBox>Auslaufmodel</CheckBox>
+                </StackPanel>
+            </StackPanel>
+            <GroupBox Header="Lagervariante" ToolTip="Lagervariante">
+                <WrapPanel>
+                    <RadioButton>Auf Lager</RadioButton>
+                    <RadioButton>Auf Beststellung</RadioButton>
+                    <RadioButton>Nicht Lieferbar</RadioButton>
+                </WrapPanel>
+            </GroupBox>
+            <Expander Header="Abbildung">
+                <Image Source="https://gfu.de/wp-content/uploads/2020/02/ki.jpg" Height="150"></Image>
+            </Expander>
+            <ListBox>
+                <ListBoxItem>Bekleidung</ListBoxItem>
+                <ListBoxItem>IT</ListBoxItem>
+                <ListBoxItem>Kommunikation</ListBoxItem>
+            </ListBox>
+            <RepeatButton>Test</RepeatButton>
+            <Button Click="Button_Click_1">Erzeuge eine Checkbox mit Bezeichnung</Button>
+            <StackPanel x:Name="MyLastStackPanel">
+                <CheckBox IsChecked="True">Dummy</CheckBox>
+            </StackPanel>
+        </StackPanel>
+    </DockPanel>
+</Window>

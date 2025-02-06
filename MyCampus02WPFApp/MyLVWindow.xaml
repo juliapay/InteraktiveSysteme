@@ -1,0 +1,22 @@
+﻿<Window x:Class="MyCampus02WPFApp.MyLVWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyCampus02WPFApp"
+        mc:Ignorable="d"
+        Title="{Binding Bezeichnung}" Height="450" Width="800">
+
+    <StackPanel>
+        <!--{Bindin Path Proberty}-->
+        <TextBox Text="{Binding Bezeichnung}"></TextBox>
+        <TextBox Text="{Binding Level}"></TextBox>
+        <Button Background="{Binding Level}">Schwierigkeit</Button>
+        <TextBox Text="{Binding Stunden}"></TextBox>
+        <Slider Value="{Binding Stunden}"></Slider>
+        <CheckBox IsChecked="{Binding Abgeschlossen}"></CheckBox>
+        
+        <Button FontSize="{Binding Stunden}">Stunden mit Binding</Button>
+
+    </StackPanel>
+</Window>
